@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Beginners Intro to Coding</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>An Absolute Beginners Intro to Coding</h2>
+					<div>
+						<img class="plain" src="images/codeupleeds.png" alt="code up logo"/>
+					</div>
+				</section>
+
+				<section>
+					<h2>Objectives</h2>
+					<p>By the end of this workshop you should be able to:</p>
+					<ul>
+						<li>Name some different data types</li>
+						<li>Understand the basic structure of a program</li>
+						<li>Draw some graphics to screen</li>
+						<li>Capture keyboard input</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Getting Started</h2>
+					<ol>
+						<li>Download processing from <a href="https://processing.org/">processing.org</a></li>
+						<li>
+							<p>Open it...</p>
+							<img src="images/processing.png" alt="processing" width="700">
+						</li>
+						<li>Give us a shout if you need any help!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Some Important Data Types</h2>
+					<ul>
+						<li class="fragment">
+							<code>String</code> (a bit of text)
+							<div class="fragment highlight-green"><code>"Hello, world!"</code></div>
+						</li>
+						<li class="fragment">
+							<code>int</code> (a whole number or <em>integer</em>)
+							<div class="fragment highlight-green"><code>101</code></div>
+						</li>
+						<li class="fragment">
+							<code>float</code> (a decimal number)
+							<div class="fragment highlight-green">
+								<code>0.25</code>
+							</div>
+						</li>
+						<li class="fragment">
+							<code>boolean</code> (true or false)
+							<div class="fragment highlight-green">
+								<code>true</code>
+							</div>
+						</li>
+						<li class="fragment">
+							<code>object</code> (a complex type)
+						</li>
+						<li class="fragment">
+							<code>Array</code> (a list of data)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Let's get coding</h2>
+				</section>
+
+				<section id="output">
+					<h2>Simple Output</h2>
+					<div><pre><code class="hljs" data-trim>println("Hello, world!");</code></pre></div>
+					<div></div>
+					<table class="fragment">
+						<tr>
+							<td>println</td><td>(</td><td>"Hello, world!"</td><td>)</td><td>;</td>
+						</tr>
+						<tr class="fragment">
+							<td>function name</td>
+							<td class="fragment">left parenthesis</td>
+							<td class="fragment">argument (String)</td>
+							<td class="fragment">right parenthesis</td>
+							<td class="fragment">semi colon</td>
+						</tr>
+					</table>
+				</section>
+
+				<section id="drawing">
+					<h2>Drawing Shapes</h2>
+					<div><pre><code class="hljs" data-trim>rect(10, 10, 20, 40);</code></pre></div>
+					<div class="fragment"><code>rect(x-pos, y-pos, width, height);</code></div>
+					<div class="fragment"><code>rect(float, float, float, float);</code></div>
+				</section>
+
+				<section id="variables">
+					<h2>Variables</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								String helloWorld = "Hello, world!";
+								float xpos = 10;
+								float ypos = 10;
+								float rectWidth = 20;
+								float rectHeight = 40;
+
+								println(helloWorld);
+								rect(xpos, ypos, rectWidth, rectHeight);
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="animation">
+					<h2>Animation</h2>
+					<div>
+							<pre>
+								<code class="hljs" data-trim>
+								String helloWorld = "Hello, world!";
+								float xpos = 10;
+								float ypos = 10;
+								float rectWidth = 20;
+								float rectHeight = 40;
+								
+								void setup() {
+									size(600, 400);
+								}
+								
+								void draw() {
+									background(0);
+									rect(xpos, ypos, rectWidth, rectHeight);
+									xpos = xpos + .5;
+								}
+								</code>
+							</pre>
+						</div>
+				</section>
+
+				<section id="keyboard">
+					<h2>Input</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								boolean moveRight = true;
+								
+								void draw() {
+									/*
+
+									*/
+
+									if(moveRight) {
+										xpos = xpos + .5;		
+									} else {
+										xpos = xpos - .5;
+									}
+								}
+
+
+								void keyPressed() {
+									moveRight = !moveRight;
+								}
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="keyboard">
+					<h2>Exercise</h2>
+					<div>
+						<p>Use the arrow keys to move the shape around the screen</p>
+					</div>
+				</section>
+
+				<section id="next-steps">
+					<h2>Next Steps...</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
