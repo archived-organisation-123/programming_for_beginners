@@ -25,9 +25,14 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>An Absolute Beginners Intro to Coding</h2>
+					<h2>A Beginners Intro to Coding</h2>
 					<div>
 						<img class="plain" src="images/codeupleeds.png" alt="code up logo"/>
+					</div>
+					<div>
+						You will need to download processing from
+						<a href="https://processing.org">processing.org</a>
+						in order to take part in this workshop.
 					</div>
 				</section>
 
@@ -39,41 +44,39 @@
 						<li>Understand the basic structure of a program</li>
 						<li>Draw some graphics to screen</li>
 						<li>Capture keyboard input</li>
+						<li>Love Programming!</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Getting Started</h2>
-					<ol>
+					<h2>Processing</h2>
+					<ul>
 						<li>Download processing from <a href="https://processing.org/">processing.org</a></li>
-						<li>
-							<p>Open it...</p>
-							<img src="images/processing.png" alt="processing" width="700">
-						</li>
-						<li>Give us a shout if you need any help!</li>
-					</ol>
+						<li>Language and platform for teaching programming in a visual context</li>
+						<li>Simple to get up and running, but extremely powerful!</li>
+					</ul>
 				</section>
 
-				<section>
+				<section id="data-types">
 					<h2>Some Important Data Types</h2>
 					<ul>
 						<li class="fragment">
 							<code>String</code> (a bit of text)
-							<div class="fragment highlight-green"><code>"Hello, world!"</code></div>
+							<div class="fragment" style="color:yellow"><code>"Hello, world!"</code></div>
 						</li>
 						<li class="fragment">
 							<code>int</code> (a whole number or <em>integer</em>)
-							<div class="fragment highlight-green"><code>101</code></div>
+							<div class="fragment" style="color:yellow"><code>101</code></div>
 						</li>
 						<li class="fragment">
 							<code>float</code> (a decimal number)
-							<div class="fragment highlight-green">
+							<div class="fragment" style="color:yellow">
 								<code>0.25</code>
 							</div>
 						</li>
 						<li class="fragment">
 							<code>boolean</code> (true or false)
-							<div class="fragment highlight-green">
+							<div class="fragment" style="color:yellow">
 								<code>true</code>
 							</div>
 						</li>
@@ -93,26 +96,27 @@
 				<section id="output">
 					<h2>Simple Output</h2>
 					<div><pre><code class="hljs" data-trim>println("Hello, world!");</code></pre></div>
-					<div></div>
-					<table class="fragment">
-						<tr>
-							<td>println</td><td>(</td><td>"Hello, world!"</td><td>)</td><td>;</td>
-						</tr>
-						<tr class="fragment">
-							<td>function name</td>
-							<td class="fragment">left parenthesis</td>
-							<td class="fragment">argument (String)</td>
-							<td class="fragment">right parenthesis</td>
-							<td class="fragment">semi colon</td>
-						</tr>
-					</table>
+					<div class="fragment"><pre><code class="hljs" data-trim>NAME(ARGUMENT);</code></pre></div>
+					<div class="fragment"><pre><code class="hljs" data-trim>println(String output);</code></pre></div>
 				</section>
 
 				<section id="drawing">
 					<h2>Drawing Shapes</h2>
 					<div><pre><code class="hljs" data-trim>rect(10, 10, 20, 40);</code></pre></div>
-					<div class="fragment"><code>rect(x-pos, y-pos, width, height);</code></div>
-					<div class="fragment"><code>rect(float, float, float, float);</code></div>
+					<div class="fragment">
+						<pre>
+							<code class="hljs">rect(float x, float y, float width, float height);</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="task">
+					<h2>Exercise</h2>
+					<div>
+						<p><code>ellipse(x, y, width, height);</code></p>
+						<p>Draw a circle that touches the edges of the window.</p>
+						<p><img src="images/circle.png" alt="circle image"></p>
+					</div>
 				</section>
 
 				<section id="variables">
@@ -121,24 +125,92 @@
 						<pre>
 							<code class="hljs" data-trim>
 								String helloWorld = "Hello, world!";
+
+								println(helloWorld);
+							</code>
+						</pre>
+					</div>
+					<div class="fragment">
+						<p>What happens when we switch the value contained 
+						in <code>helloWorld</code>?</p>
+					</div>
+				</section>
+
+				<section id="variables2">
+					<h2>Variables continued</h2>
+					<div>
+						<code>TYPE name = value;</code>
+					</div>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
 								float xpos = 10;
 								float ypos = 10;
 								float rectWidth = 20;
-								float rectHeight = 40;
+								float rectHeight = rectWidth + rectWidth;
 
-								println(helloWorld);
 								rect(xpos, ypos, rectWidth, rectHeight);
 							</code>
 						</pre>
 					</div>
 				</section>
 
+
+				<section id="functions">
+					<h2>Functions</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								void callMe(String name) {
+									println("Hello, " + name);
+								}
+							</code>
+						</pre>
+					</div>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								TYPE NAME(ARGUMENTS) {
+									FUNCTION BODY
+								}
+							</code>
+						</pre>
+					</div>
+
+				</section>
+
+				<section id="calling-functions">
+					<h2>Calling our Function</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+									void callMe(String name) {
+										println("hello, " + name);
+									}
+									  
+									void setup() {
+									   callMe("Ben");
+									   callMe("Sally");
+									}
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="task2">
+					<h2>Exercise</h2>
+					<div>
+						<p>Write a function that takes an x co-ordinate, a y co-ordinate
+							and a width as arguments and draws a square</p>
+					</div>
+				</section>
+
+
 				<section id="animation">
 					<h2>Animation</h2>
 					<div>
 							<pre>
 								<code class="hljs" data-trim>
-								String helloWorld = "Hello, world!";
 								float xpos = 10;
 								float ypos = 10;
 								float rectWidth = 20;
@@ -151,7 +223,7 @@
 								void draw() {
 									background(0);
 									rect(xpos, ypos, rectWidth, rectHeight);
-									xpos = xpos + .5;
+									xpos = xpos + 0.5;
 								}
 								</code>
 							</pre>
@@ -163,30 +235,52 @@
 					<div>
 						<pre>
 							<code class="hljs" data-trim>
-								boolean moveRight = true;
-								
-								void draw() {
-									/*
-
-									*/
-
-									if(moveRight) {
-										xpos = xpos + .5;		
-									} else {
-										xpos = xpos - .5;
-									}
-								}
-
-
 								void keyPressed() {
-									moveRight = !moveRight;
+									println("key: " + key);
+									println("keyCode:" + keyCode);
 								}
 							</code>
 						</pre>
 					</div>
 				</section>
 
-				<section id="keyboard">
+				<section id="conditionals">
+					<h2>Conditional Statements</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								if(something){
+									doThis();
+								} else if(somethingElse){
+									doThisInstead();
+								}
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="conditionals2">
+					<h2>Conditional Statements</h2>
+					<div>
+						<pre>
+							<code class="hljs" data-trim>
+								void keyPressed() {
+									if(keyCode == 37){
+										println("LEFT key pressed");
+									} else if(keyCode == 38){
+										println("UP key pressed");
+									} else if(keyCode == 39) {
+										println("RIGHT key pressed");
+									} else if(keyCode == 40) {
+										println("DOWN key pressed");
+									}
+								}
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section id="final-exercise">
 					<h2>Exercise</h2>
 					<div>
 						<p>Use the arrow keys to move the shape around the screen</p>
@@ -195,6 +289,27 @@
 
 				<section id="next-steps">
 					<h2>Next Steps...</h2>
+					<p>More processing...</p>
+					<ul>
+						<li>
+							<a href="https://processing.org/tutorials">
+								https://processing.org/tutorials/
+							</a>
+						</li>
+						<li>
+							<a href="https://processing.org/reference/">
+								https://processing.org/reference/
+							</a>
+						</li>
+					</ul>
+					<p>Join us on Slack</p>
+					<ul>
+						<li>
+							<a href="https://codeupleeds.slack.com/">
+								https://codeupleeds.slack.com/
+							</a>
+						</li>
+					</ul>
 				</section>
 
 			</div>
